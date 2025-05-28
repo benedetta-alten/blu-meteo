@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { Component } from '@angular/core';
 
-// Componente inline semplice per la home page
 const InlineHomeComponent = Component({
   selector: 'app-inline-home',
   standalone: true,

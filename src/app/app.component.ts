@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { PersonalAreaComponent } from './shared/personal-area/personal-area.component'; // Importa il componente
+import { PersonalAreaComponent } from './shared/personal-area/personal-area.component'; 
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -12,7 +12,7 @@ import { NgIf } from '@angular/common';
     RouterModule,
     HeaderComponent,
     FooterComponent,
-    PersonalAreaComponent,  // aggiungi qui il componente personal-area
+    PersonalAreaComponent, 
     NgIf
   ],
   templateUrl: './app.component.html',

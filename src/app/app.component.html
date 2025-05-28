@@ -1,11 +1,9 @@
-<!-- Passiamo la funzione toggle all'header -->
 <app-header (toggleLogin)="togglePersonalArea()"></app-header>
 
 <div class="main-content">
   <router-outlet></router-outlet>
 </div>
 
-<!-- mostra la personal area solo se showPersonalArea è true -->
 <app-personal-area *ngIf="showPersonalArea"></app-personal-area>
 
 <app-footer class="footer-container"></app-footer>
