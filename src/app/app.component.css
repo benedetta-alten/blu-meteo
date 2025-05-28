@@ -1,5 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+body {
+  overflow-x: hidden;
+}
+
 .main-content {
-  margin-top: 100px;
+  margin-top: 100px 0 0 0;
+  padding: 0;
+  flex: 1;
 }
 
 .personal-area-container {
@@ -76,4 +95,13 @@ button:hover {
 
 .welcome {
   text-align: center;
+}
+
+.app-wrapper {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;          
+  display: flex;
+  flex-direction: column;  
+  width: 100%;   
 }

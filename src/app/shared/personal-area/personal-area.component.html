@@ -1,5 +1,7 @@
 <div class="personal-area-container">
-  <h2 class="access-title" [class.active]="!isRegistering" (click)="switchToLogin()" *ngIf="!isRegistering">Accedi a BluMeteo</h2>
+  <h2 class="access-title" *ngIf="!isLoggedIn && !isRegistering" [class.active]="!isRegistering" (click)="switchToLogin()">Accedi a BluMeteo</h2>
+  <h2 class="access-title active" *ngIf="isRegistering" (click)="switchToLogin()">Registrati a BluMeteo</h2>
+  <h2 class="access-title active" *ngIf="isLoggedIn">Sei loggato a BluMeteo</h2>
 
   <div *ngIf="!isLoggedIn && !isRegistering">
     <div class="form-group">
@@ -25,7 +27,6 @@
     <p class="register-text" (click)="switchToRegister()" [class.active]="isRegistering">Registrati ora e scopri i vantaggi!</p>
   </div>
 
-  <h2 class="access-title active" (click)="switchToRegister()" *ngIf="isRegistering">Registrati a BluMeteo</h2> 
 
   <div *ngIf="isRegistering">
     <div class="form-group">

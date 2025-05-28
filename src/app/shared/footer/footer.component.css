@@ -1,9 +1,19 @@
 .footer-container {
+  width: 100%;
+  margin: 0;
+  padding: 20px;
   background-color: #1a237e;
   color: white;
-  padding: 0 20px;
   text-align: center;
   font-size: 0.9rem;
-  width: 100%;
-  flex-shrink: 0
+  flex-shrink: 0;
+  transition: min-height 0.3s ease;
+}
+
+.user-info {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }

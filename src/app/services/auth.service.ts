@@ -14,10 +14,27 @@ export class AuthService {
   setUser(email: string, lastAccess: string) {
     this.emailSource.next(email);
     this.lastAccessSource.next(lastAccess);
+
+    localStorage.setItem('userEmail', email);
+    localStorage.setItem('lastAccess', lastAccess);
   }
 
   clearUser() {
     this.emailSource.next(null);
     this.lastAccessSource.next(null);
+
+    localStorage.removeItem('userEmail');
+    localStorage.removeItem('lastAccess');
   }
+
+  restoreUserFromStorage() {
+    const email = localStorage.getItem('userEmail');
+    const lastAccess = localStorage.getItem('lastAccess');
+
+    if (email && lastAccess) {
+      this.emailSource.next(email);
+      this.lastAccessSource.next(lastAccess);
+    }
+  }
+
 }

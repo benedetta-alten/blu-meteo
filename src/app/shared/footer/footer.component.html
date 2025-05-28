@@ -1,12 +1,17 @@
 <footer class="footer-container">
     <p>&copy; 2025 Blu Meteo. Tutti i diritti riservati.</p>
 
-    <ng-container *ngIf="currentEmail$ | async as email">
-        <p>Utente: {{ email }}</p>
+    <ng-container *ngIf="(currentEmail$ | async) as email; else defaultFooter">
+    <div class="user-info">
+      <span>Utente: {{ email }}</span>
+      <ng-container *ngIf="lastAccessDate$ | async as lastAccess">
+        <span>Ultimo accesso: {{ lastAccess | date:'dd/MM/yyyy HH:mm:ss' }}</span>
+      </ng-container>
+    </div>
     </ng-container>
 
-    <ng-container *ngIf="lastAccessDate$ | async as lastAccess">
-        <p>Ultimo accesso: {{ lastAccess | date:'dd/MM/yyyy HH:mm:ss' }}</p>
-    </ng-container>
+    <ng-template #defaultFooter>
+        <p>Accedi per scoprire tutte le funzionalità di Blu Meteo!</p>
+    </ng-template>
 
 </footer>

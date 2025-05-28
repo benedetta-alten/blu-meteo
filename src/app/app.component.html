@@ -1,11 +1,13 @@
-<app-header (toggleLogin)="togglePersonalArea()"></app-header>
+<div class="app-wrapper">
+  <app-header (toggleLogin)="togglePersonalArea()"></app-header>
 
-<div class="personal-area-wrapper" *ngIf="showPersonalArea">
-  <app-personal-area></app-personal-area>
+  <div class="personal-area-wrapper" *ngIf="showPersonalArea">
+    <app-personal-area></app-personal-area>
+  </div>
+
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+
+  <app-footer class="footer-container"></app-footer>
 </div>
-
-<div class="main-content">
-  <router-outlet></router-outlet>
-</div>
-
-<app-footer class="footer-container"></app-footer>
