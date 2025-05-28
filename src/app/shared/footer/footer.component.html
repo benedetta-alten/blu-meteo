@@ -1,4 +1,12 @@
 <footer class="footer-container">
     <p>&copy; 2025 Blu Meteo. Tutti i diritti riservati.</p>
-    <p>Email: <a href="mailto:benedetta.ippoliti@alten.it">email</a></p>
+
+    <ng-container *ngIf="currentEmail$ | async as email">
+        <p>Utente: {{ email }}</p>
+    </ng-container>
+
+    <ng-container *ngIf="lastAccessDate$ | async as lastAccess">
+        <p>Ultimo accesso: {{ lastAccess | date:'dd/MM/yyyy HH:mm:ss' }}</p>
+    </ng-container>
+
 </footer>

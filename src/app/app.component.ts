@@ -4,6 +4,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { PersonalAreaComponent } from './shared/personal-area/personal-area.component'; 
 import { NgIf } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ import { NgIf } from '@angular/common';
     HeaderComponent,
     FooterComponent,
     PersonalAreaComponent, 
-    NgIf
+    NgIf,
+    HttpClientModule 
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

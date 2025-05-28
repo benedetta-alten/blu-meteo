@@ -1,14 +1,12 @@
 <div class="personal-area-container">
-  <h2>Area Personale</h2>
+  <h2 class="access-title" [class.active]="!isRegistering" (click)="switchToLogin()" *ngIf="!isRegistering">Accedi a BluMeteo</h2>
 
-  <div *ngIf="!isLoggedIn">
+  <div *ngIf="!isLoggedIn && !isRegistering">
     <div class="form-group">
-      <label>Email</label>
       <input type="email" [(ngModel)]="email" placeholder="Inserisci email" />
     </div>
 
     <div class="form-group">
-      <label>Password</label>
       <div class="password-wrapper">
         <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password" placeholder="Inserisci password" />
         <span class="toggle-eye" (click)="togglePasswordVisibility()">👁️</span>
@@ -20,13 +18,38 @@
         <input type="checkbox" [(ngModel)]="rememberMe" checked />
         Ricordami per 24h
       </label>
-      <span class="forgot">Password dimenticata?</span>
     </div>
 
     <button (click)="login()">LOGIN</button>
 
-    <p class="register">Registrati ora e scopri i vantaggi!</p>
+    <p class="register-text" (click)="switchToRegister()" [class.active]="isRegistering">Registrati ora e scopri i vantaggi!</p>
   </div>
+
+  <h2 class="access-title active" (click)="switchToRegister()" *ngIf="isRegistering">Registrati a BluMeteo</h2> 
+
+  <div *ngIf="isRegistering">
+    <div class="form-group">
+      <input type="email" [(ngModel)]="email" placeholder="Inserisci email" />
+    </div>
+
+    <div class="form-group">
+      <div class="password-wrapper">
+        <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password" placeholder="Inserisci password (min 8 caratteri)" />
+        <span class="toggle-eye" (click)="togglePasswordVisibility()">👁️</span>
+      </div>
+    </div>
+
+    <button class="register-button" (click)="register()">REGISTRATI</button>
+
+    <p 
+      class="register-text" 
+      (click)="switchToLogin()" 
+      [class.active]="!isRegistering"
+    >
+      Torna al login
+    </p>
+  </div>
+
 
   <div *ngIf="isLoggedIn" class="welcome">
     <p>Benvenuto, {{ email }}</p>

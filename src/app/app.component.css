@@ -1,8 +1,25 @@
+.main-content {
+  margin-top: 100px;
+}
+
 .personal-area-container {
   max-width: 400px;
   margin: auto;
   padding: 20px;
   font-family: Arial, sans-serif;
+}
+
+.personal-area-wrapper {
+  position: absolute;
+  top: 70px; 
+  right: 20px;
+  z-index: 1000;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  width: 300px;
 }
 
 .form-group {
