@@ -1,0 +1,26 @@
+.home-content {
+  margin-top: 150px;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.image-column {
+  display: flex;
+  flex-direction: column;    
+  align-items: center;      
+  margin-left: 250px;         
+  gap: 50px;                 
+  max-width: 200px;         
+}
+
+.image-column img {
+  max-width: 100%;           
+  height: auto;
+  display: block;
+}
+
+.image-column img:first-child {
+  margin-top: -20px; 
+}

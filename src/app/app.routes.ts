@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 import { Component } from '@angular/core';
 import { SearchCityComponent } from './pages/search-city/search-city.component';
+import { HomeComponent } from './pages/home/home.component';
+import { MapComponent } from './pages/map/map/map.component';
 
 const InlineHomeComponent = Component({
   selector: 'app-inline-home',
@@ -9,6 +11,7 @@ const InlineHomeComponent = Component({
 })(class {});
 
 export const routes: Routes = [
-  { path: '', component: InlineHomeComponent },
-  { path: 'search-city', component: SearchCityComponent }
+  { path: '', component: HomeComponent },
+  { path: 'search-city', component: SearchCityComponent },
+  { path: 'map', component: MapComponent }
 ];

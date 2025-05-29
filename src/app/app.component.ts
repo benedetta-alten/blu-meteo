@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router, NavigationEnd } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { PersonalAreaComponent } from './shared/personal-area/personal-area.component'; 
 import { NgIf } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
-import { SearchCityComponent } from './pages/search-city/search-city.component';
-
 
 @Component({
   selector: 'app-root',
@@ -18,21 +16,27 @@ import { SearchCityComponent } from './pages/search-city/search-city.component';
     FooterComponent,
     PersonalAreaComponent, 
     NgIf,
-    HttpClientModule,
-    SearchCityComponent
+    HttpClientModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
   title = 'blu-meteo';
-
   showPersonalArea = false;
+  isHomePage = false;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.authService.restoreUserFromStorage(); 
+
+    this.router.events.subscribe(event => {
+    if (event instanceof NavigationEnd) {
+      const url = event.urlAfterRedirects;
+      this.isHomePage = (url === '/' || url === '');
+    }
+    });
   }
 
   togglePersonalArea() {

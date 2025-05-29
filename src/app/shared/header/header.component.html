@@ -1,5 +1,5 @@
 <header class="header-container">
-    <a routerLink="/" class="logo-text-link">
+    <a (click)="goHome()" style="cursor:pointer" class="logo-text-link">
         <div class="logo">
             <img src="assets/logo.png" alt="Logo" />
         </div>
@@ -11,12 +11,16 @@
     </a>
 
     <div class="action-icons">
-    <button class="icon-button" (click)="onSearchClick()" aria-label="Cerca">
-      <img src="assets/cerca.jpg" alt="Cerca" />
-    </button>
+      <button class="icon-button" (click)="goToMap()" aria-label="Mappa">
+        <img src="assets/mappa.png" alt="Mappa" />
+      </button>
 
-    <button class="icon-button" (click)="onLoginClick()" aria-label="Login">
-      <img src="assets/login.jpg" alt="Login" />
-    </button>
+      <button class="icon-button" (click)="onSearchClick()" aria-label="Cerca">
+        <img src="assets/cerca.jpg" alt="Cerca" />
+      </button>
+
+      <button class="icon-button" (click)="onLoginClick()" aria-label="Login">
+        <img src="assets/login.jpg" alt="Login" />
+      </button>
     </div>
 </header>

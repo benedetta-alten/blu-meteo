@@ -18,4 +18,13 @@ export class HeaderComponent {
   onSearchClick() {
     this.router.navigate(['/search-city']);
   }
+
+  goHome() {
+    console.log('Navigazione home...');
+    this.router.navigate(['/']);
+  }
+
+  goToMap() {
+    this.router.navigate(['/map']); 
+  }
 }

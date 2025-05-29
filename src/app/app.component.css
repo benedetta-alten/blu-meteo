@@ -7,6 +7,7 @@
 
 html, body {
   height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box; 
@@ -98,11 +99,26 @@ button:hover {
   text-align: center;
 }
 
+.app-wrapper.home {
+  background-image: url('/assets/sfondo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 .app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
   margin: 0;
   padding: 0;
-  min-height: 100vh;          
-  display: flex;
-  flex-direction: column;  
-  width: 100%;   
+  width: 100vw;
+}
+
+.content-wrapper {
+  padding: 20px;
 }
