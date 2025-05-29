@@ -1,14 +1,22 @@
 <header class="header-container">
-    <div class="logo">
-        <img src="assets/logo.png" alt="Logo" />
-    </div>
+    <a routerLink="/" class="logo-text-link">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Logo" />
+        </div>
 
-    <div class="header-text"> 
-        <h1>BluMeteo</h1>  
-        <h4><em>Il sito più affidabile per le previsioni meteo!</em></h4> 
-    </div>
+        <div class="header-text"> 
+            <h2>BluMeteo</h2>  
+            <h4><em>Il sito più affidabile per le previsioni meteo!</em></h4> 
+        </div>
+    </a>
 
-    <div class="login">
-        <img src="assets/login.jpg" alt="Login" (click)="onLoginClick()" style="cursor:pointer" />
+    <div class="action-icons">
+    <button class="icon-button" (click)="onSearchClick()" aria-label="Cerca">
+      <img src="assets/cerca.jpg" alt="Cerca" />
+    </button>
+
+    <button class="icon-button" (click)="onLoginClick()" aria-label="Login">
+      <img src="assets/login.jpg" alt="Login" />
+    </button>
     </div>
 </header>
