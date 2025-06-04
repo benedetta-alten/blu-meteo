@@ -10,6 +10,7 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
+
 export class HeaderComponent {
   @Output() toggleLogin = new EventEmitter<void>();
 

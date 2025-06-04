@@ -9,15 +9,11 @@ import { AuthService } from './services/auth.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    RouterModule,
-    HeaderComponent,
-    FooterComponent,
-    HttpClientModule
-  ],
+  imports: [RouterModule, HeaderComponent, FooterComponent, HttpClientModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit {
   title = 'blu-meteo';
   showPersonalArea = false;

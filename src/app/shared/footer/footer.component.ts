@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
+
 export class FooterComponent {
   currentEmail$: Observable<string | null>;
   lastAccessDate$: Observable<string | null>;

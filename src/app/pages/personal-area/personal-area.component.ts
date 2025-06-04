@@ -11,6 +11,7 @@ import { HistoryComponent } from '../../components/history/history.component';
   templateUrl: './personal-area.component.html',
   styleUrls: ['./personal-area.component.css']
 })
+
 export class PersonalAreaComponent implements OnInit {
   userEmail: string | null = null;
 

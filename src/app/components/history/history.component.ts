@@ -16,6 +16,7 @@ interface SearchHistoryEntry {
   standalone: true,  
   imports: [CommonModule, FormsModule, NgbPaginationModule]
 })
+
 export class HistoryComponent implements OnInit {
 
   allEntries: SearchHistoryEntry[] = [

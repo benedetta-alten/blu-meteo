@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'  
 })
+
 export class AuthService {  
   private emailSource = new BehaviorSubject<string | null>(null);
   private lastAccessSource = new BehaviorSubject<string | null>(null);

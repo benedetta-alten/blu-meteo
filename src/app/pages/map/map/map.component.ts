@@ -3,7 +3,7 @@ import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormsModule } from '@angular/forms';
-//import { AuthService } from '../services/auth.service';
+//import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-map',
@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./map.component.css'],
   imports: [CommonModule, FormsModule] 
 })
+
 export class MapComponent implements AfterViewInit {
   private map: any;
   private marker: any;
@@ -66,7 +67,6 @@ export class MapComponent implements AfterViewInit {
   if (isPlatformBrowser(this.platformId)) {
     const L = await import('leaflet');
     this.L = L;
-
     this.map = L.map('map').setView([45.4642, 9.1900], 5);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
