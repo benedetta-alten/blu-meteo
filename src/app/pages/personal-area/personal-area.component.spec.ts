@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchCityComponent } from './search-city.component';
+import { PersonalAreaComponent } from './personal-area.component';
 
-describe('SearchCityComponent', () => {
-  let component: SearchCityComponent;
-  let fixture: ComponentFixture<SearchCityComponent>;
+describe('PersonalAreaComponent', () => {
+  let component: PersonalAreaComponent;
+  let fixture: ComponentFixture<PersonalAreaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SearchCityComponent]
+      imports: [PersonalAreaComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SearchCityComponent);
+    fixture = TestBed.createComponent(PersonalAreaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

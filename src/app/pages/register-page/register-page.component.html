@@ -1,0 +1,28 @@
+<div class="personal-area-container">
+  <h2 *ngIf="!isRegistered">Registrati a BluMeteo</h2>
+  <h2 class="access-title active" *ngIf="isRegistered">Sei loggato a BluMeteo</h2>
+
+  <div *ngIf="!isRegistered" class="login-form">
+    <div class="form-group">
+      <input type="email" [(ngModel)]="email" placeholder="Inserisci email" />
+    </div>
+
+    <div class="form-group">
+      <div class="password-wrapper">
+        <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password" placeholder="Inserisci password" />
+        <span class="toggle-eye" (click)="togglePasswordVisibility()">👁️</span>
+      </div>
+    </div>
+
+    <button (click)="register()">REGISTRATI</button>
+
+    <p class="register-text">
+      <a routerLink="/login" (click)="goLogin()">Hai già un account? Accedi qui!</a>
+    </p>
+  </div>
+
+  <div *ngIf="isRegistered" class="welcome">
+    <p>Benvenuto, {{ email }}</p>
+    <button class="login-button" (click)="logout()">LOGOUT</button>
+  </div>
+</div>

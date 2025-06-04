@@ -1,13 +1,11 @@
 .footer-container {
   width: 100%;
-  margin: 0;
-  padding: 20px;
+  padding: 10px 0 20px 0;
   background-color: #1a237e;
   color: white;
   text-align: center;
   font-size: 0.9rem;
-  flex-shrink: 0;
-  transition: min-height 0.3s ease;
+  box-sizing: border-box;
 }
 
 .user-info {

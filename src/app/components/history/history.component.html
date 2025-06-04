@@ -1,0 +1,41 @@
+<div class="container mt-3">
+  <h3>Cronologia delle ricerche</h3>
+
+  <div class="mb-3">
+    <label for="searchCoordinates" class="form-label">Cerca per coordinate (lat o lng)</label>
+    <input id="searchCoordinates" type="text" class="form-control" [(ngModel)]="searchCoordinates" (ngModelChange)="onSearchChange()" placeholder="Es. 48.8566 o 2.3522" />
+  </div>
+
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th (click)="toggleSortDirection()" style="cursor:pointer;" title="Ordina per data e ora">
+          Data e ora
+          <span *ngIf="sortDirection === 'asc'">&#9650;</span>
+          <span *ngIf="sortDirection === 'desc'">&#9660;</span>
+        </th>
+        <th>Città</th>
+        <th>Coordinate (lat, lng)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entry of filteredEntries">
+        <td>{{ entry.timestamp | date:'short' }}</td>
+        <td>{{ entry.city }}</td>
+        <td>{{ entry.coordinates.lat }}, {{ entry.coordinates.lng }}</td>
+      </tr>
+      <tr *ngIf="filteredEntries.length === 0">
+        <td colspan="3" class="text-center">Nessun risultato trovato</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ngb-pagination
+    [collectionSize]="collectionSize"
+    [(page)]="page"
+    [pageSize]="pageSize"
+    [maxSize]="5"
+    [boundaryLinks]="true"
+    (pageChange)="onPageChange($event)">
+  </ngb-pagination>
+</div>

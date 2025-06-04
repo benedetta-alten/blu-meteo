@@ -1,11 +1,9 @@
 <div class="app-wrapper" [class.home]="isHomePage">
   <app-header (toggleLogin)="togglePersonalArea()"></app-header>
 
-  <div class="personal-area-wrapper" *ngIf="showPersonalArea">
-    <app-personal-area></app-personal-area>
-  </div>
+  <div style="height: 100px;"></div>
 
-  <div class="main-content">
+  <div class="main-content" >
     <router-outlet></router-outlet> 
   </div>
 

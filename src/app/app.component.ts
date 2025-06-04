@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule, Router, NavigationEnd } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { PersonalAreaComponent } from './shared/personal-area/personal-area.component'; 
 import { NgIf } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
@@ -14,8 +13,6 @@ import { AuthService } from './services/auth.service';
     RouterModule,
     HeaderComponent,
     FooterComponent,
-    PersonalAreaComponent, 
-    NgIf,
     HttpClientModule
   ],
   templateUrl: './app.component.html',
