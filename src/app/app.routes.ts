@@ -15,12 +15,12 @@ const InlineHomeComponent = Component({
 })(class {});
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
   { path: 'history', component: HistoryComponent, canActivate: [AuthGuard] },
   { path: 'map', component: MapComponent },
   { path: 'personal-area', component: PersonalAreaComponent, canActivate: [AuthGuard] },
+  { path: '', component: HomeComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login' }
 ];

@@ -3,7 +3,8 @@ import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormsModule } from '@angular/forms';
-//import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../../services/auth.service';
+
 
 @Component({
   selector: 'app-map',
@@ -57,10 +58,10 @@ export class MapComponent implements AfterViewInit {
   ];
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
-    private http: HttpClient, /*private authService: AuthServic*/
+    private http: HttpClient, private authService: AuthService
   ) {
     this.cities.sort((a, b) => a.name.localeCompare(b.name));
-    //this.isLoggedIn = this.authService.isLoggedIn;
+    this.isLoggedIn = this.authService.isLoggedIn;
   }
 
   async ngAfterViewInit(): Promise<void> {
